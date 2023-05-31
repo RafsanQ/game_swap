@@ -2,6 +2,8 @@
 
 include 'config.php';
 
+$sql = "SELECT * FROM games";
+$result = mysqli_query($conn, $sql);
 
 
 ?>
@@ -116,91 +118,28 @@ include 'config.php';
   
 </div>
     <div class="row">
-      <!-- Product Card 1 -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="static/Games/482.2.jpeg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Sackboy <br> Adventure</a>
-              <button class="btn btn-success ml-5">Add to Cart</button>
-            </h4>
-            <h5>$19.99</h5>
-            <p class="card-text">Price: 1950 <br> Location: Gulshan <br> Condition: Mint</p>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 2 -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="static/Games/482.10.jpeg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Fortnite</a>
-              <button class="btn btn-success ml-5">Add to Cart</button>
-            </h4>
-            <h5>$29.99</h5>
-            <p class="card-text">Price: 2200 <br> Location: Gulshan-2 <br> Condition: Slight Scratches</p>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 3 -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="static/Games/482.4.jpeg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Minecraft</a>
-              <button class="btn btn-success ml-5">Add to Cart</button>
-            </h4>
-            <h5>$39.99</h5>
-            <p class="card-text">Price: 1400 <br> Location: Potenga <br> Condition: New</p>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 1 -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="/static/Games/482.1.jpeg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Hogwarts <br> Legacy</a>
-              <button class="btn btn-success ml-5">Add to Cart</button>
-            </h4>
-            <h5>$19.99</h5>
-            <p class="card-text">Price: 2350 <br> Location: Niketon <br> Condition: New</p>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 2 -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="static/Games/482.6.jpeg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Call of Duty <br>Modern Warfare II <br> 2022</a>
-              <button class="btn btn-success ml-5">Add to Cart</button>
-            </h4>
-            <h5>$29.99</h5>
-            <p class="card-text">Price: 2000 <br> Location: Mirpur <br> Condition: Fresh</p>
-          </div>
-        </div>
-      </div>
-      <!-- Product Card 3 -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="static/Games/482.5.jpeg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">WWE 2k23f</a>
-              <button class="btn btn-success ml-5">Add to Cart</button>
-            </h4>
-            <h5>$39.99</h5>
-            <p class="card-text">Price: 1800 <br> Location: Gulshan <br> Condition: Mint</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <?php 
+      while($row = $result->fetch_assoc()) {
+        echo
+          '<div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              
+              <img class="card-img-top" style="height:400px" src="'.$row["image_link"].'"alt="">
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">'.$row["name"].' </a>
+                  <button class="btn btn-success ml-5">Add to Cart</button>
+                </h4>
+                <h5>BDT '.$row["price"].'</h5>
+                <p class="card-text">Price: '.$row["price"].'<br> Location: '.$row['location'].'<br> Condition: '.$row['product_condition'].'</p>
+              </div>
+            </div>
+          </div>';
+      } 
+    ?>
+    
+    
   </div>
   <!-- Bootstrap JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
