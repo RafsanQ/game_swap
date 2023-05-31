@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment Page</title>
+    <link rel="stylesheet" type="text/css" href="PaymentStyles.css">  
+  </head>
+  <body>
+   
+    <form>
+        <h2>Select Payment Method</h2>
+        <input type="radio" id="cash" name="payment-options" value="Taka">
+        <label for="cash">Cash</label><br>
+        <input type="radio" id="bkash" name="payment-options" value="Online">
+        <label for="bkash"> Bkash</label><br>
+        
+      </form>
+     
+      <div id="payment-options">
+       <div id="cash">
+          <!-- Cash payment option goes here -->
+        </div>
+        <div id="bkash">
+      
+        </div>
+      </div>
+      
+      <div id="payment-options">
+     
+        <div id="cash">
+          <form>
+            <h3>Cash Payment</h3>
+            <p>Enter the amount you want to pay:</p>
+            <input type="number" name="cash-amount" id="cash-amount" required>
+            <button type="submit">Submit Payment</button>
+          </form>
+        </div>
+        <div id="bkash">
+          <form>
+            <h3>bKash Payment</h3>
+            <p>Enter your bKash number:</p>
+            <input type="tel" name="bkash-number" id="bkash-number" required>
+            <p>Enter the amount you want to pay:</p>
+            <input type="number" name="bkash-amount" id="bkash-amount" required>
+            <button type="submit">Submit Payment</button>
+          </form>
+        </div>
+      </div>
+            
+  </body>
+</html>
