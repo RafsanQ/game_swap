@@ -48,15 +48,30 @@
       </div>
       <div class="col-md-4">
         <div class="d-flex flex-column justify-content-center align-items-center my-5 py-5">
-          <input class="form-control w-100 my-4" type="text" placeholder="Search games...">
-          <select class="form-select form-control w-100 my-4" aria-label="Default select example">
+          <input class="form-control w-100 my-4" type="text" name="name" placeholder="Video Game Title">
+          <input class="form-control w-100 my-4" type="text" name="image_link" placeholder="Video Image Link">
+          </br>
+          <input class="form-control w-100 my-4" type="text" name="username" placeholder="Seller's Name">
+          <input class="form-control w-100 my-4" type="text" name="user_email" placeholder="Seller's Email">
+          <input class="form-control w-100 my-4" type="text" name="user_phone" placeholder="Seller's Phone Number">
+          
+          <select class="form-select form-control w-100 my-4" name="location" aria-label="Location">
             
-            <option selected>Location</option>
-            <option value="1">Dhaka</option>
-            <option value="2">Chittogong</option>
-            <option value="3">Sylhet</option>
+            <option selected disabled>Location</option>
+            <option>Dhaka</option>
+            <option>Chittogong</option>
+            <option>Sylhet</option>
+            <option>Khulna</option>
+            <option>Rajshahi</option>
           </select>
-          <input class="form-control w-100 my-4" type="text" placeholder="Enter price">
+
+          <select class="form-select form-control w-100 my-4" name="product_condition" aria-label="condition">
+            <option selected disabled>Condition</option>
+            <option>Mint</option>
+            <option>Used</option>
+          </select>
+
+          <input class="form-control w-100 my-4" type="text" name="price" placeholder="Asking price">
           <button class="btn btn-block btn-success w-100">Submit request</button>
         </div>
       </div>
