@@ -1,3 +1,26 @@
+<?php
+
+  include 'config.php';
+
+  if(isset($_POST['name'])){
+    $gameName = $_POST["name"];
+    $gameImageLink = $_POST["image_link"];
+    $username = $_POST["username"];
+    $user_email = $_POST["user_email"];
+    $user_phone = $_POST["user_phone"];
+    $location = $_POST["location"];
+    $product_condition = $_POST["product_condition"];
+    $price = $_POST["price"];
+
+    $sql = "INSERT INTO games (name, price, location, product_condition, image_link, username, user_email, user_phone) VALUES ('{$gameName}', '{$price}', '{$location}', '{$product_condition}', '{$gameImageLink}', '{$username}', '{$user_email}', '{$user_phone}')";
+    $result = mysqli_query($conn, $sql);
+    
+  }
+  
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,6 +71,7 @@
       </div>
       <div class="col-md-4">
         <div class="d-flex flex-column justify-content-center align-items-center my-5 py-5">
+        <form class="form-inline ml-auto" method="POST">
           <input class="form-control w-100 my-4" type="text" name="name" placeholder="Video Game Title">
           <input class="form-control w-100 my-4" type="text" name="image_link" placeholder="Video Image Link">
           </br>
@@ -73,6 +97,7 @@
 
           <input class="form-control w-100 my-4" type="text" name="price" placeholder="Asking price">
           <button class="btn btn-block btn-success w-100">Submit request</button>
+        </form>
         </div>
       </div>
       <!-- <div class="col-md-4">
