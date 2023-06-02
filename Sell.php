@@ -42,8 +42,8 @@
 <!-- Product Cards -->
 <div class="mt-5 pt-5">
     <div class="row">
-      <div class="col-md-4">
-                <img src="/static/" alt="" width="400px" height="500px">
+      <!-- <div class="col-md-4">
+                <img src="/static/" alt="" width="400px" height="500px"> -->
 
       </div>
       <div class="col-md-4">
@@ -60,9 +60,9 @@
           <button class="btn btn-block btn-success w-100">Submit request</button>
         </div>
       </div>
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <img src="/static/Ad1.jpg" alt="" width="400px" height="500px">
-      </div>
+      </div> -->
     </div>
   </div>
   
